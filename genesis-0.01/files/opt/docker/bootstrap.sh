@@ -2,10 +2,13 @@
 
 cd $(dirname "${0}")
 
-for FILE in conf.d/*; do
-  echo "executing: ${FILE}"
-  "${FILE}" 
-done
+[ -f init.d/* ] && {
+  echo "launching docker init.d scripts"
+  for FILE in init.d/*; do
+    echo "  * ${FILE}"
+    "${FILE}" 
+  done
+}
 
 # launch our process manager 
 supervisord -n -c /etc/supervisor/supervisord.conf
