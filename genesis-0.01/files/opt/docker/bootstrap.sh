@@ -5,8 +5,10 @@ cd $(dirname "${0}")
 [ -f init.d/* ] && {
   echo "launching docker init.d scripts"
   for FILE in init.d/*; do
-    echo "  * ${FILE}"
-    "${FILE}" 
+   [ -x "${FILE}" ] && { 
+      echo "  * ${FILE}"
+      "${FILE}" 
+    }
   done
 }
 
