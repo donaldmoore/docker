@@ -8,4 +8,4 @@ RUN yum -y update && yum -y install haproxy && yum clean all
 VOLUME ["/etc/haproxy"]
 
 # expose haproxy web port 
-EXPOSE 8888
+EXPOSE 8888/tcp
