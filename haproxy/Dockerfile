@@ -1,4 +1,4 @@
-FROM digitalmechanic/genesis-0.01
+FROM digitalmechanic/genesis
 MAINTAINER Donald Ray Moore Jr <dmoore@suspectedterrorist.org>
 
 # install haproxy
